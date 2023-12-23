@@ -58,9 +58,18 @@ button:hover{
 }
 
 #options{
-    margin-top: 2rem;
+    margin: 2rem;
+    width: 100%;
 }
 
 .opt{
     margin: 0.5rem 0;
+}
+
+img{
+    max-width: 200px;
+}
+
+#prize{
+    text-align: center;
 }

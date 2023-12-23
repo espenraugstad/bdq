@@ -9,6 +9,28 @@ const QUESTIONS = [
             "Fortnite"
         ],
         answerIndex: 1
+    },
+    {
+        id: "7246",
+        question: `Hvem er dette? <br><br><img src="./assets/3294276.png"/> `,
+        options: [
+            "Mario",
+            "Zelda",
+            "Bowser",
+            "Link"
+        ],
+        answerIndex: 3  
+    },
+    {
+        id: "9078",
+        question: "Hvem er høyest av Mario og Luigi",
+        options: [
+            "De er like høye",
+            "Mario",
+            "Luigi",
+            "Ingen av de"
+        ],
+        answerIndex: 2  
     }
 ];
 
@@ -22,7 +44,8 @@ let currentIndex = 0;
 function displayQuestion(index){
     qno.innerText = index + 1;
     currentQuestion = QUESTIONS[index];
-    question.innerText = currentQuestion.question;
+    question.innerHTML = currentQuestion.question;
+    options.innerHTML = "";
     for(let option of currentQuestion.options){
         let opt = document.createElement("div");
         opt.classList.add("opt")
@@ -37,7 +60,7 @@ function displayQuestion(index){
 displayQuestion(currentIndex);
 
 answer.addEventListener("click", ()=>{
-    console.log("click");
+
     let allOptions = Array.from(document.querySelectorAll("input"));
     let selectedIndex = allOptions.findIndex(el => el.checked);
     if(selectedIndex < 0){
@@ -45,11 +68,22 @@ answer.addEventListener("click", ()=>{
     } else {
         if(currentQuestion){
             if(currentQuestion.answerIndex === selectedIndex){
-                alert("Riktig");
+                // Correct answer
+                currentIndex += 1;
+                if(currentIndex >= QUESTIONS.length){
+                    finished();
+                } else{
+                    console.log("Neste spørsmål");
+                    displayQuestion(currentIndex);
+                }
             } else {
-                alert("Feil");
+                alert("Dessverre feil. Prøv igjen.");
             }
         }
-    }
-    
+    } 
 });
+
+function finished(){
+    console.log("Ferdig");
+    location.href = "con.html";
+}
