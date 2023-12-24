@@ -8,6 +8,8 @@
 body{
     padding: 0;
     margin: 0;
+    /* background: linear-gradient(hsl(219, 100%, 90%), hsl(219, 100%, 80%)); */
+    background-color: #F1FAFF;
 }
 
 main{
@@ -16,7 +18,7 @@ main{
     max-width: 500px;
     height: 100vh;
     margin: 0 auto;
-    width: 100%;
+    width: 90%;
     align-items: center;
     padding: 1rem;
 }
@@ -47,23 +49,53 @@ button{
     align-items: center;
     font-size: 1rem;
     font-weight: 600;
-    background-color: darkgreen;
-    color: white;
-    border: 2px solid black;
+    /* background-color: darkgreen; */
+    
+   
+   /*  border: 2px solid black; */
+   border: none;
     border-radius: 5px;
+   /*  box-shadow: 0 3px 2px lightgray; */
+}
+
+.success{
+    background: linear-gradient( #048704, #006400, #048704);
+    color: white;
+}
+
+.warning{
+    background: linear-gradient( #ffcd50, #ffa500, #ffcd50);
+    color: #212529;
+}
+
+.danger{
+    background: linear-gradient( #ff466b, #dc3545, #ff466b);
+    color: white;
 }
 
 button:hover{
     cursor: pointer;
 }
 
+#question{
+    padding: 1rem;
+    margin: 0;
+    box-shadow: 0px 0px 5px 1px lightgray;
+    border-radius: 5px;
+}
 #options{
-    margin: 2rem;
+    margin: 1rem;
     width: 100%;
 }
 
+
+
 .opt{
     margin: 0.5rem 0;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    gap: .5rem;
+    align-items: start;
 }
 
 img{
@@ -74,10 +106,47 @@ img{
     text-align: center;
 }
 
+dialog{
+    background-color: #F1FAFF;
+    padding: 2rem;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    top: -50%;
+}
+
 dialog form{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+::backdrop{
+    background-color: black;
+    opacity: 0.8;
+}
+
+.noshow{
+    display: none;
+}
+
+.tc{
+    text-align: center;
+}
+
+footer{
+    width: 100%;  
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+footer img{
+    width: 2%;
+    margin: 0 0.25%;
 }

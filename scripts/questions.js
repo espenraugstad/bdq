@@ -23,7 +23,7 @@ const QUESTIONS = [
     },
     {
         id: "9078",
-        question: "Hvem er høyest av Mario og Luigi",
+        question: "Hvem er høyest av Mario og Luigi?",
         options: [
             "De er like høye",
             "Mario",
