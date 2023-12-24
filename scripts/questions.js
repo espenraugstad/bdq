@@ -42,6 +42,8 @@ const next = document.getElementById('next');
 const nextBtn = document.getElementById('nextBtn');
 const wrong = document.getElementById('wrong');
 const wrongBtn = document.getElementById('wrongBtn');
+const obs = document.getElementById('obs');
+const obsBtn = document.getElementById('obsBtn');
 
 let currentQuestion = null;
 let currentIndex = 0;
@@ -68,7 +70,7 @@ answer.addEventListener("click", ()=>{
     let allOptions = Array.from(document.querySelectorAll("input"));
     let selectedIndex = allOptions.findIndex(el => el.checked);
     if(selectedIndex < 0){
-        alert("Du må velge et svar!!!!");
+        obs.showModal();
     } else {
         if(currentQuestion){
             if(currentQuestion.answerIndex === selectedIndex){
@@ -95,7 +97,12 @@ nextBtn.addEventListener("click", (e)=>{
 wrongBtn.addEventListener("click", (e)=>{
     e.preventDefault();
     wrong.close();
-})
+});
+
+obsBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    obs.close();
+});
 
 function finished(){
     console.log("Ferdig");
