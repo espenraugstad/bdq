@@ -40,6 +40,8 @@ const options = document.getElementById('options');
 const answer = document.getElementById('answer');
 const next = document.getElementById('next');
 const nextBtn = document.getElementById('nextBtn');
+const wrong = document.getElementById('wrong');
+const wrongBtn = document.getElementById('wrongBtn');
 
 let currentQuestion = null;
 let currentIndex = 0;
@@ -74,7 +76,7 @@ answer.addEventListener("click", ()=>{
                 currentIndex += 1;
                 next.showModal();
             } else {
-                alert("Dessverre feil. Prøv igjen.");
+                wrong.showModal();
             }
         }
     } 
@@ -87,8 +89,12 @@ nextBtn.addEventListener("click", (e)=>{
         finished();
     } else{
         displayQuestion(currentIndex);
-    }
-    
+    } 
+});
+
+wrongBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    wrong.close();
 })
 
 function finished(){
