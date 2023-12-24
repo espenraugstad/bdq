@@ -38,6 +38,9 @@ const qno = document.getElementById('qno');
 const question = document.getElementById('question');
 const options = document.getElementById('options');
 const answer = document.getElementById('answer');
+const next = document.getElementById('next');
+const nextBtn = document.getElementById('nextBtn');
+
 let currentQuestion = null;
 let currentIndex = 0;
 
@@ -60,7 +63,6 @@ function displayQuestion(index){
 displayQuestion(currentIndex);
 
 answer.addEventListener("click", ()=>{
-
     let allOptions = Array.from(document.querySelectorAll("input"));
     let selectedIndex = allOptions.findIndex(el => el.checked);
     if(selectedIndex < 0){
@@ -70,18 +72,24 @@ answer.addEventListener("click", ()=>{
             if(currentQuestion.answerIndex === selectedIndex){
                 // Correct answer
                 currentIndex += 1;
-                if(currentIndex >= QUESTIONS.length){
-                    finished();
-                } else{
-                    console.log("Neste spørsmål");
-                    displayQuestion(currentIndex);
-                }
+                next.showModal();
             } else {
                 alert("Dessverre feil. Prøv igjen.");
             }
         }
     } 
 });
+
+nextBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    next.close();
+    if(currentIndex >= QUESTIONS.length){
+        finished();
+    } else{
+        displayQuestion(currentIndex);
+    }
+    
+})
 
 function finished(){
     console.log("Ferdig");

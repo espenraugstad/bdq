@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bursdagsquiz</title>
-    <link rel="stylesheet" href="./styles/global.css">
-</head>
-<body>
-    <main class="halftop">
-        <h1>Spørsmål <span id="qno"></span></h1>
-        <div id="question"></div>
-        <div id="options"></div>
-        <button id="answer" class="halftop">Svar</button>
+    <link rel="stylesheet" href="./styles/global.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Spørsmål <span id="qno"></span></h1>
+      <div id="question"></div>
+      <div id="options"></div>
+      <button id="answer">Svar</button>
     </main>
+
+    <dialog id="next">
+      <form>
+        <h2>Korrekt!</h2>
+        <p>Bra jobba. Det var riktig svar</p>
+        <button id="nextBtn">Gå videre</button>
+      </form>
+    </dialog>
     <script src="./scripts/questions.js"></script>
-</body>
+  </body>
 </html>
