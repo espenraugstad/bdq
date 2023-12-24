@@ -16,7 +16,7 @@ main{
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    height: 100vh;
+    min-height: 80vh;
     margin: 0 auto;
     width: 90%;
     align-items: center;
@@ -138,12 +138,13 @@ dialog form{
 
 footer{
     width: 100%;  
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: static;
+    min-height: 20vh;
     z-index: 1000;
     display: flex;
     justify-content: center;
+    align-items: end;
+    margin-top: .25rem;
 }
 
 footer img{
