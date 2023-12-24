@@ -3,7 +3,7 @@ const QUESTIONS = [
         id: "123",
         question: "I hvilket spill må man bygge ting av blokker og passe seg for eksploderende \"creepers\"?",
         options: [
-            "The Legend of Zelda: Breath of the Wild",
+            "Breath of the Wild",
             "Minecraft",
             "Super Mario 3D World",
             "Fortnite"
@@ -57,8 +57,7 @@ function displayQuestion(index){
         let opt = document.createElement("div");
         opt.classList.add("opt")
         opt.innerHTML = `
-        <input type="radio" name="questionOption">
-        <label>${option}</label>
+        <label class="optLabel"> <input type="radio" name="questionOption"> ${option} </label>
         `;
         options.appendChild(opt);
     }

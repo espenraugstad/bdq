@@ -81,21 +81,47 @@ button:hover{
     padding: 1rem;
     margin: 0;
     box-shadow: 0px 0px 5px 1px lightgray;
+    border: 1px solid black;
     border-radius: 5px;
+    width: 100%;
+    text-align: center;
 }
 #options{
     margin: 1rem;
     width: 100%;
 }
-
-
-
 .opt{
+    margin: .5rem 0;
+    border-radius: 500px;
+    box-shadow: 0px 0px 5px 1px lightgray;
+
+}
+
+/* .opt{
     margin: 0.5rem 0;
     display: grid;
     grid-template-columns: 0.1fr 1fr;
     gap: .5rem;
     align-items: start;
+} */
+
+.optLabel{
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    display: inline-block;
+    border-radius: 500px;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.optLabel:has(input:checked){
+    background: linear-gradient( #ffcd50, #ffa500, #ffcd50);
+    color: black;
+}
+
+.optLabel input{
+    display: none;
 }
 
 img{
@@ -111,6 +137,7 @@ dialog{
     padding: 2rem;
     border: none;
     border-radius: 5px;
+    max-width: 400px;
     width: 80%;
     top: -50%;
 }
